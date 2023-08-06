@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    let dataService = DataService()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Whats for Dinner")
+            
+            Button {
+                //dataService.makeReservation()
+                //All Wired up
+            } label: {
+                Text("Test Firestore")
+            }
+
         }
         .padding()
     }

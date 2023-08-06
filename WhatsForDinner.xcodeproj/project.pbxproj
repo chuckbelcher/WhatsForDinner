@@ -11,6 +11,10 @@
 		32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AAA2A8046D900E74618 /* ContentView.swift */; };
 		32BB8AAD2A8046DA00E74618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BB8AAC2A8046DA00E74618 /* Assets.xcassets */; };
 		32BB8AB02A8046DA00E74618 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BB8AAF2A8046DA00E74618 /* Preview Assets.xcassets */; };
+		32BB8AB72A80484700E74618 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32BB8AB62A80484700E74618 /* GoogleService-Info.plist */; };
+		32BB8ABA2A8048C400E74618 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 32BB8AB92A8048C400E74618 /* FirebaseFirestore */; };
+		32BB8AC02A804B9E00E74618 /* DinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8ABF2A804B9E00E74618 /* DinnerModel.swift */; };
+		32BB8AC22A804BB400E74618 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AC12A804BB400E74618 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		32BB8AAA2A8046D900E74618 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32BB8AAC2A8046DA00E74618 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32BB8AAF2A8046DA00E74618 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32BB8AB62A80484700E74618 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32BB8ABF2A804B9E00E74618 /* DinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerModel.swift; sourceTree = "<group>"; };
+		32BB8AC12A804BB400E74618 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BB8ABA2A8048C400E74618 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,11 @@
 			children = (
 				32BB8AA82A8046D900E74618 /* WhatsForDinnerApp.swift */,
 				32BB8AAA2A8046D900E74618 /* ContentView.swift */,
+				32BB8ABE2A804B0A00E74618 /* Views */,
+				32BB8ABD2A804AF900E74618 /* ViewModels */,
+				32BB8ABC2A804AEE00E74618 /* Models */,
+				32BB8ABB2A804ADC00E74618 /* Services */,
+				32BB8AB62A80484700E74618 /* GoogleService-Info.plist */,
 				32BB8AAC2A8046DA00E74618 /* Assets.xcassets */,
 				32BB8AAE2A8046DA00E74618 /* Preview Content */,
 			);
@@ -65,6 +78,36 @@
 				32BB8AAF2A8046DA00E74618 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32BB8ABB2A804ADC00E74618 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				32BB8AC12A804BB400E74618 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		32BB8ABC2A804AEE00E74618 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32BB8ABF2A804B9E00E74618 /* DinnerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32BB8ABD2A804AF900E74618 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32BB8ABE2A804B0A00E74618 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,9 @@
 			dependencies = (
 			);
 			name = WhatsForDinner;
+			packageProductDependencies = (
+				32BB8AB92A8048C400E74618 /* FirebaseFirestore */,
+			);
 			productName = WhatsForDinner;
 			productReference = 32BB8AA52A8046D900E74618 /* WhatsForDinner.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 32BB8A9C2A8046D900E74618;
+			packageReferences = (
+				32BB8AB82A8048C400E74618 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 32BB8AA62A8046D900E74618 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +176,7 @@
 			files = (
 				32BB8AB02A8046DA00E74618 /* Preview Assets.xcassets in Resources */,
 				32BB8AAD2A8046DA00E74618 /* Assets.xcassets in Resources */,
+				32BB8AB72A80484700E74618 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */,
+				32BB8AC02A804B9E00E74618 /* DinnerModel.swift in Sources */,
 				32BB8AA92A8046D900E74618 /* WhatsForDinnerApp.swift in Sources */,
+				32BB8AC22A804BB400E74618 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32BB8AB82A8048C400E74618 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32BB8AB92A8048C400E74618 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32BB8AB82A8048C400E74618 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32BB8A9D2A8046D900E74618 /* Project object */;
 }
