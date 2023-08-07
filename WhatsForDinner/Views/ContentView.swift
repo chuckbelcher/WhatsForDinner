@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    let dataService = DataService()
+    let dinnerViewModel = DinnerViewModel()
     
     var body: some View {
         VStack {
             Text("Whats for Dinner")
             
             Button {
-                //dataService.makeReservation()
+                //dinnerViewModel.CreateDinnerMenu()
+                dinnerViewModel.getDinnerMenu()
                 //All Wired up
             } label: {
-                Text("Test Firestore")
+                Text("Get Menu For Week")
+                    .padding()
+                    .background(.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    .font(.headline)
             }
 
         }

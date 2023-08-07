@@ -17,11 +17,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+
 @main
 struct WhatsForDinnerApp: App {
     
     //Register app delegate for for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    //@UIApplicationDelegateAdaptor(DataService.connect_db.self var delegate
     
     var body: some Scene {
         WindowGroup {
