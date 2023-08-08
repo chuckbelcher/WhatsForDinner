@@ -13,6 +13,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Whats for Dinner")
+                .font(.title)
+                .bold()
             
             Button {
                 //dinnerViewModel.CreateDinnerMenu()
