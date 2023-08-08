@@ -16,28 +16,29 @@ class DinnerViewModel {
         getDinnerMenu()
     }
     
-    func getDinnerMenu()  {
+     func getDinnerMenu() {
         let db = Firestore.firestore()
         let dinners = db.collection("Dinners").document("20230806")
-        var allMeals: [Meal] = []
+        //var allMeals: [Meal] = []
         dinners.getDocument { docSnapshot, error in
-            
+            var allMeals: [Meal] = []
             if let error = error {
                 print(error)
             } else if let docSnapshot = docSnapshot {
-                //print(docSnapshot.data()!)
                 
-                let meals = docSnapshot.data()
+                let currentMeals = docSnapshot.data()
                 let id = docSnapshot.documentID
-                let sunday = meals?["Sunday"] as? String ?? "Nothing for Sunday"
-                let monday = meals?["Monday"] as? String ?? "Nothing for Monday"
-                let tuesday = meals?["Tuesday"] as? String ?? "Nothing for Tuesdayday"
-                let wednesday = meals?["Wednesday"] as? String ?? "Nothing for Wednesday"
-                let thursday = meals?["Thursday"] as? String ?? "Nothing for Thursday"
-                let friday = meals?["Friday"] as? String ?? "Nothing for Friday"
-                let saturday = meals?["Satday"] as? String ?? "Nothing for Satday"
+                let sunday = currentMeals?["Sunday"] as? String ?? "Nothing for Sunday"
+                let monday = currentMeals?["Monday"] as? String ?? "Nothing for Monday"
+                let tuesday = currentMeals?["Tuesday"] as? String ?? "Nothing for Tuesdayday"
+                let wednesday = currentMeals?["Wednesday"] as? String ?? "Nothing for Wednesday"
+                let thursday = currentMeals?["Thursday"] as? String ?? "Nothing for Thursday"
+                let friday = currentMeals?["Friday"] as? String ?? "Nothing for Friday"
+                let saturday = currentMeals?["Satday"] as? String ?? "Nothing for Satday"
                 
                 allMeals.append(Meal(id: id, sunday: sunday, monday: monday, tuesday: tuesday, wednesday: wednesday, thursday: thursday, friday: friday, saturday: saturday))
+                self.meals = allMeals
+                
                 
                 //print("Meal List for week of \(id): Sunday: \(sunday), Monday: \(monday), Tuesday:\(tuesday)")
             } else {
@@ -45,7 +46,7 @@ class DinnerViewModel {
             }
             
         }
-        self.meals = allMeals
+        print("From getDinnerMenu \(meals)")
     }
     
     func CreateDinnerMenu() {

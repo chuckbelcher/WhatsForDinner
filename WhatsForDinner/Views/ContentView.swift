@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let dinnerViewModel = DinnerViewModel()
+    @State var dinnerViewModel = DinnerViewModel()
+    @State var meals = [Meal]()
     
     var body: some View {
         VStack {
@@ -27,6 +28,13 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(20)
                     .font(.headline)
+            }
+            
+            Text("Not Loading ..... on first pass")
+            
+            List(meals) { meal in
+                Text(meal.sunday)
+                Text(meal.monday)
             }
 
         }
