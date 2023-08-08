@@ -10,6 +10,8 @@ import Firebase
 
 class DinnerViewModel {
     
+    @Published var meals : [String: [Meal]] = [:]
+    
     func getDinnerMenu()  {
         let db = Firestore.firestore()
         let dinners = db.collection("Dinners").document("20230806")
