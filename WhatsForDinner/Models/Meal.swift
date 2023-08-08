@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Meal: Hashable, Identifiable {
+struct Meal: Identifiable {
     // ID is the document ID in the Firestore database
     var id: String
     var sunday: String
