@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32207EED2A8440B800D1DC6B /* smallDisplayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */; };
 		32BB8AA92A8046D900E74618 /* WhatsForDinnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AA82A8046D900E74618 /* WhatsForDinnerApp.swift */; };
 		32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AAA2A8046D900E74618 /* ContentView.swift */; };
 		32BB8AAD2A8046DA00E74618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BB8AAC2A8046DA00E74618 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallDisplayCard.swift; sourceTree = "<group>"; };
 		32BB8AA52A8046D900E74618 /* WhatsForDinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsForDinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BB8AA82A8046D900E74618 /* WhatsForDinnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsForDinnerApp.swift; sourceTree = "<group>"; };
 		32BB8AAA2A8046D900E74618 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				32BB8AAA2A8046D900E74618 /* ContentView.swift */,
+				32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BB8AC42A80646400E74618 /* DinnerViewModel.swift in Sources */,
+				32207EED2A8440B800D1DC6B /* smallDisplayCard.swift in Sources */,
 				32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */,
 				32BB8AC02A804B9E00E74618 /* Meal.swift in Sources */,
 				32BB8AA92A8046D900E74618 /* WhatsForDinnerApp.swift in Sources */,

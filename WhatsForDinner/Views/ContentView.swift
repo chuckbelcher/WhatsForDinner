@@ -21,24 +21,20 @@ struct ContentView: View {
                 .padding(.bottom)
                 .foregroundColor(.blue)
                 .bold()
-            
+
             LazyVStack (alignment: .leading) {
                 ForEach(dinnerViewModel.meals, id: \.self) { meal in
-                    Text("Sunday: \(meal.sunday)")
-                    Text("Monday: \(meal.monday)")
-                    Text("Tuesday: \(meal.tuesday)")
-                    Text("Wednesday: \(meal.wednesday)")
-                    Text("Thursday: \(meal.thursday)")
-                    Text("Friday: \(meal.friday)")
-                    Text("Saturday: \(meal.saturday)")
+                    smallDisplayCard(label: "Sunday", data: meal.sunday)
+                    smallDisplayCard(label: "Monday", data: meal.monday)
+                    smallDisplayCard(label: "Tuesday", data: meal.tuesday)
+                    smallDisplayCard(label: "Wednesday", data: meal.wednesday)
+                    smallDisplayCard(label: "Thursday", data: meal.thursday)
+                    smallDisplayCard(label: "Friday", data: meal.friday)
+                    smallDisplayCard(label: "Saturdayday", data: meal.saturday)
                     
                 }
-                .padding(.vertical, 10)
-                .font(.headline)
+
             }
-            .padding(.leading, 20)
-            
-            
             Spacer()
 
         }
