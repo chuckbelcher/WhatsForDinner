@@ -30,7 +30,7 @@ struct ContentView: View {
                     smallDisplayCard(label: "Wednesday", data: meal.wednesday)
                     smallDisplayCard(label: "Thursday", data: meal.thursday)
                     smallDisplayCard(label: "Friday", data: meal.friday)
-                    smallDisplayCard(label: "Saturdayday", data: meal.saturday)
+                    smallDisplayCard(label: "Saturday", data: meal.saturday)
                     
                 }
 

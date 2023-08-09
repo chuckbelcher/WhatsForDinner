@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		32207EED2A8440B800D1DC6B /* smallDisplayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */; };
+		32207EEF2A844A7500D1DC6B /* ShowMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32207EEE2A844A7500D1DC6B /* ShowMenuView.swift */; };
+		32207EF12A844A9100D1DC6B /* ShowAllMenusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32207EF02A844A9100D1DC6B /* ShowAllMenusView.swift */; };
+		32207EF32A844AA500D1DC6B /* AddMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32207EF22A844AA500D1DC6B /* AddMenuView.swift */; };
 		32BB8AA92A8046D900E74618 /* WhatsForDinnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AA82A8046D900E74618 /* WhatsForDinnerApp.swift */; };
 		32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB8AAA2A8046D900E74618 /* ContentView.swift */; };
 		32BB8AAD2A8046DA00E74618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BB8AAC2A8046DA00E74618 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallDisplayCard.swift; sourceTree = "<group>"; };
+		32207EEE2A844A7500D1DC6B /* ShowMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMenuView.swift; sourceTree = "<group>"; };
+		32207EF02A844A9100D1DC6B /* ShowAllMenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllMenusView.swift; sourceTree = "<group>"; };
+		32207EF22A844AA500D1DC6B /* AddMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuView.swift; sourceTree = "<group>"; };
 		32BB8AA52A8046D900E74618 /* WhatsForDinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsForDinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BB8AA82A8046D900E74618 /* WhatsForDinnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsForDinnerApp.swift; sourceTree = "<group>"; };
 		32BB8AAA2A8046D900E74618 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,9 @@
 			children = (
 				32BB8AAA2A8046D900E74618 /* ContentView.swift */,
 				32207EEC2A8440B800D1DC6B /* smallDisplayCard.swift */,
+				32207EF22A844AA500D1DC6B /* AddMenuView.swift */,
+				32207EF02A844A9100D1DC6B /* ShowAllMenusView.swift */,
+				32207EEE2A844A7500D1DC6B /* ShowMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,7 +194,10 @@
 				32BB8AC42A80646400E74618 /* DinnerViewModel.swift in Sources */,
 				32207EED2A8440B800D1DC6B /* smallDisplayCard.swift in Sources */,
 				32BB8AAB2A8046D900E74618 /* ContentView.swift in Sources */,
+				32207EF12A844A9100D1DC6B /* ShowAllMenusView.swift in Sources */,
 				32BB8AC02A804B9E00E74618 /* Meal.swift in Sources */,
+				32207EF32A844AA500D1DC6B /* AddMenuView.swift in Sources */,
+				32207EEF2A844A7500D1DC6B /* ShowMenuView.swift in Sources */,
 				32BB8AA92A8046D900E74618 /* WhatsForDinnerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
