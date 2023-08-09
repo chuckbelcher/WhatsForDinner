@@ -13,32 +13,32 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Whats for Dinner")
+            Text("Whats for Dinner?")
                 .font(.title)
                 .bold()
-            Text(dinnerViewModel.meals.first?.id ?? "")
-                .font(.title3)
-                .padding(.bottom)
-                .foregroundColor(.blue)
-                .bold()
 
-            LazyVStack (alignment: .leading) {
-                ForEach(dinnerViewModel.meals, id: \.self) { meal in
-                    smallDisplayCard(label: "Sunday", data: meal.sunday)
-                    smallDisplayCard(label: "Monday", data: meal.monday)
-                    smallDisplayCard(label: "Tuesday", data: meal.tuesday)
-                    smallDisplayCard(label: "Wednesday", data: meal.wednesday)
-                    smallDisplayCard(label: "Thursday", data: meal.thursday)
-                    smallDisplayCard(label: "Friday", data: meal.friday)
-                    smallDisplayCard(label: "Saturday", data: meal.saturday)
+                TabView {
+                    ShowAllMenusView()
+                        .tabItem {
+                            Image(systemName: "list.bullet")
+                            Text("Menus")
+                        }
                     
-                }
-
+                    ShowMenuView(menuName: dinnerViewModel.meals.first?.id ?? "")
+                        .tabItem {
+                            Image(systemName: "menucard")
+                            Text("Current")
+                        }
+                    AddMenuView()
+                        .tabItem {
+                            Image(systemName: "plus.square")
+                            Text("Add Menu")
+                        }
+                
             }
-            Spacer()
-
+                .padding(.top)
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
