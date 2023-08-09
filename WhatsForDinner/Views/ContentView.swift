@@ -8,34 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var dinnerViewModel = DinnerViewModel()
-    @State var meals = [Meal]()
+    @EnvironmentObject var dinnerViewModel: DinnerViewModel
+
     
     var body: some View {
         VStack {
             Text("Whats for Dinner")
                 .font(.title)
                 .bold()
+            Text(dinnerViewModel.meals.first?.id ?? "")
+                .font(.title3)
+                .padding(.bottom)
+                .foregroundColor(.blue)
+                .bold()
             
-            Button {
-                //dinnerViewModel.CreateDinnerMenu()
-                dinnerViewModel.getDinnerMenu()
-                //All Wired up
-            } label: {
-                Text("Get Menu For Week")
-                    .padding()
-                    .background(.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .font(.headline)
+            LazyVStack (alignment: .leading) {
+                ForEach(dinnerViewModel.meals, id: \.self) { meal in
+                    Text("Sunday: \(meal.sunday)")
+                    Text("Monday: \(meal.monday)")
+                    Text("Tuesday: \(meal.tuesday)")
+                    Text("Wednesday: \(meal.wednesday)")
+                    Text("Thursday: \(meal.thursday)")
+                    Text("Friday: \(meal.friday)")
+                    Text("Saturday: \(meal.saturday)")
+                    
+                }
+                .padding(.vertical, 10)
+                .font(.headline)
             }
+            .padding(.leading, 20)
             
-            Text("Not Loading ..... on first pass")
             
-            List(meals) { meal in
-                Text(meal.sunday)
-                Text(meal.monday)
-            }
+            Spacer()
 
         }
         .padding()
@@ -45,5 +49,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(DinnerViewModel())
     }
 }

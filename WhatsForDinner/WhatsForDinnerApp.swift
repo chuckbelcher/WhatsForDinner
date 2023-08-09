@@ -28,6 +28,7 @@ struct WhatsForDinnerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(DinnerViewModel())
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class DinnerViewModel {
+class DinnerViewModel: ObservableObject {
     
     @Published var meals : [Meal] = []
     
@@ -19,13 +19,12 @@ class DinnerViewModel {
      func getDinnerMenu() {
         let db = Firestore.firestore()
         let dinners = db.collection("Dinners").document("20230806")
-        //var allMeals: [Meal] = []
         dinners.getDocument { docSnapshot, error in
-            var allMeals: [Meal] = []
+            
             if let error = error {
                 print(error)
             } else if let docSnapshot = docSnapshot {
-                
+                var allMeals: [Meal] = []
                 let currentMeals = docSnapshot.data()
                 let id = docSnapshot.documentID
                 let sunday = currentMeals?["Sunday"] as? String ?? "Nothing for Sunday"
@@ -34,19 +33,17 @@ class DinnerViewModel {
                 let wednesday = currentMeals?["Wednesday"] as? String ?? "Nothing for Wednesday"
                 let thursday = currentMeals?["Thursday"] as? String ?? "Nothing for Thursday"
                 let friday = currentMeals?["Friday"] as? String ?? "Nothing for Friday"
-                let saturday = currentMeals?["Satday"] as? String ?? "Nothing for Satday"
+                let saturday = currentMeals?["Saturday"] as? String ?? "Nothing for Saturday"
                 
                 allMeals.append(Meal(id: id, sunday: sunday, monday: monday, tuesday: tuesday, wednesday: wednesday, thursday: thursday, friday: friday, saturday: saturday))
                 self.meals = allMeals
                 
-                
-                //print("Meal List for week of \(id): Sunday: \(sunday), Monday: \(monday), Tuesday:\(tuesday)")
             } else {
                 print("No data found")
             }
             
         }
-        print("From getDinnerMenu \(meals)")
+         //print("From getDinnerMenu \(meals)")
     }
     
     func CreateDinnerMenu() {
