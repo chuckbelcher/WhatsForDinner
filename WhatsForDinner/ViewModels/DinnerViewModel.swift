@@ -14,7 +14,27 @@ class DinnerViewModel: ObservableObject {
     
     init() {
         getDinnerMenu()
+        getAllMenus()
     }
+    
+    
+    func getAllMenus() {
+       let db = Firestore.firestore()
+       let dinners = db.collection("Dinners")
+       dinners.getDocuments { docSnapshot, error in
+           
+           if let error = error {
+               print(error)
+           } else if let docSnapshot = docSnapshot {
+            //Add Code here
+               
+           } else {
+               print("No data found")
+           }
+           
+       }
+   }
+    
     
      func getDinnerMenu() {
         let db = Firestore.firestore()
