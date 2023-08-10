@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ShowAllMenusView: View {
+    @EnvironmentObject var dinnerViewModel: DinnerViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("All Menus")
+                .font(.title)
+            ScrollView {
+                LazyVStack (alignment: .leading) {
+                    ForEach(dinnerViewModel.menus, id: \.self) { menu in
+                        smallDisplayCard(label: menu, data: "")
+                        
+                    }
+                    
+                }
+                .padding(.horizontal)
+                Spacer()
+                
+            }
+        }
     }
 }
 
 struct ShowAllMenusView_Previews: PreviewProvider {
     static var previews: some View {
         ShowAllMenusView()
+            .environmentObject(DinnerViewModel())
     }
 }

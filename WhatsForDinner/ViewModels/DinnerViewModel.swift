@@ -11,6 +11,7 @@ import Firebase
 class DinnerViewModel: ObservableObject {
     
     @Published var meals : [Meal] = []
+    @Published var menus: [String] = []
     
     init() {
         getDinnerMenu()
@@ -21,12 +22,17 @@ class DinnerViewModel: ObservableObject {
     func getAllMenus() {
        let db = Firestore.firestore()
        let dinners = db.collection("Dinners")
-       dinners.getDocuments { docSnapshot, error in
+       dinners.getDocuments { querySnapshot, error in
            
            if let error = error {
                print(error)
-           } else if let docSnapshot = docSnapshot {
-            //Add Code here
+           } else if let querySnapshot = querySnapshot {
+           var allDocs: [String] = []
+               for doc in querySnapshot.documents {
+                   allDocs.append(doc.documentID)
+                   
+               }
+               self.menus = allDocs
                
            } else {
                print("No data found")
