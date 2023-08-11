@@ -22,8 +22,8 @@ class DinnerViewModel: ObservableObject {
     func getAllMenus() {
        let db = Firestore.firestore()
        let dinners = db.collection("Dinners")
-       dinners.getDocuments { querySnapshot, error in
-           
+       //dinners.getDocuments { querySnapshot, error in
+      dinners.addSnapshotListener { querySnapshot, error in
            if let error = error {
                print(error)
            } else if let querySnapshot = querySnapshot {
@@ -45,8 +45,8 @@ class DinnerViewModel: ObservableObject {
      func getDinnerMenu() {
         let db = Firestore.firestore()
         let dinners = db.collection("Dinners").document("20230806")
-        dinners.getDocument { docSnapshot, error in
-            
+        //dinners.getDocument { docSnapshot, error in
+        dinners.addSnapshotListener { docSnapshot, error in
             if let error = error {
                 print(error)
             } else if let docSnapshot = docSnapshot {
