@@ -21,14 +21,9 @@ struct ContentView: View {
                     ShowAllMenusView()
                         .tabItem {
                             Image(systemName: "list.bullet")
-                            Text("Menus")
+                            Text("All Menus")
                         }
                     
-                    ShowMenuView(menuName: dinnerViewModel.meals.first?.id ?? "")
-                        .tabItem {
-                            Image(systemName: "menucard")
-                            Text("Current")
-                        }
                     AddMenuView()
                         .tabItem {
                             Image(systemName: "plus.square")

@@ -10,13 +10,18 @@ import SwiftUI
 struct ShowAllMenusView: View {
     @EnvironmentObject var dinnerViewModel: DinnerViewModel
     var body: some View {
-        VStack {
+        NavigationStack {
             Text("All Menus")
                 .font(.title)
             ScrollView {
                 LazyVStack (alignment: .leading) {
                     ForEach(dinnerViewModel.menus, id: \.self) { menu in
-                        smallDisplayCard(label: menu, data: "")
+                        NavigationLink {
+                            ShowMenuView(menuName: menu)
+                        } label: {
+                            smallDisplayCard(label: menu, data: "")
+                        }
+                        .accentColor(.black)
                         
                     }
                     
