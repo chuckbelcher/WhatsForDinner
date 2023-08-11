@@ -19,7 +19,7 @@ struct ShowAllMenusView: View {
                         NavigationLink {
                             ShowMenuView(menuName: menu)
                         } label: {
-                            smallDisplayCard(label: menu, data: "")
+                            smallDisplayCard(label: menu)
                         }
                         .accentColor(.black)
                         

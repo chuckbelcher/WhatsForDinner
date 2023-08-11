@@ -25,13 +25,13 @@ struct ShowMenuView: View {
             ScrollView {
                 LazyVStack (alignment: .leading) {
                     ForEach(dinnerViewModel.meals, id: \.self) { meal in
-                        smallDisplayCard(label: "Sunday", data: meal.sunday)
-                        smallDisplayCard(label: "Monday", data: meal.monday)
-                        smallDisplayCard(label: "Tuesday", data: meal.tuesday)
-                        smallDisplayCard(label: "Wednesday", data: meal.wednesday)
-                        smallDisplayCard(label: "Thursday", data: meal.thursday)
-                        smallDisplayCard(label: "Friday", data: meal.friday)
-                        smallDisplayCard(label: "Saturday", data: meal.saturday)
+                        medDisplayCard(label: "Sunday", data: meal.sunday)
+                        medDisplayCard(label: "Monday", data: meal.monday)
+                        medDisplayCard(label: "Tuesday", data: meal.tuesday)
+                        medDisplayCard(label: "Wednesday", data: meal.wednesday)
+                        medDisplayCard(label: "Thursday", data: meal.thursday)
+                        medDisplayCard(label: "Friday", data: meal.friday)
+                        medDisplayCard(label: "Saturday", data: meal.saturday)
                         
                     }
                     
