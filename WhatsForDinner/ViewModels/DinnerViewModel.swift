@@ -14,7 +14,7 @@ class DinnerViewModel: ObservableObject {
     @Published var menus: [String] = []
     
     init() {
-        getDinnerMenu()
+        //getDinnerMenu()
         getAllMenus()
     }
     
@@ -42,9 +42,9 @@ class DinnerViewModel: ObservableObject {
    }
     
     
-     func getDinnerMenu() {
+    func getDinnerMenu(menuid: String) {
         let db = Firestore.firestore()
-        let dinners = db.collection("Dinners").document("20230806")
+        let dinners = db.collection("Dinners").document(menuid)
         //dinners.getDocument { docSnapshot, error in
         dinners.addSnapshotListener { docSnapshot, error in
             if let error = error {
