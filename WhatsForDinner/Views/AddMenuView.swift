@@ -17,6 +17,8 @@ struct AddMenuView: View {
     @State var friday: String = ""
     @State var saturday: String = ""
     
+    @State var menu: [String:String] = [:]
+    
     var body: some View {
         
         VStack {
@@ -91,6 +93,8 @@ struct AddMenuView: View {
                 
                 Button {
                     print("Submitting New Menu")
+                    menu = ["sunday": sunday, "monday": monday, "tuesday": tuesday, "wednesday": wednesday, "thursday": thursday, "friday": friday, "saturday": saturday]
+                    print(menu)
                 } label: {
                     Text("Submit New Menu")
                         .padding(.horizontal, 50)
